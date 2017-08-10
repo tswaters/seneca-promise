@@ -1,0 +1,39 @@
+{
+  "name": "seneca-promise",
+  "version": "1.0.0",
+  "description": "Utilities for seneca re: promises, async/await",
+  "main": "seneca-promise.js",
+  "scripts": {
+    "clean": "rimraf coverage .nyc_output",
+    "lint": "eslint .",
+    "test": "npm run clean && nyc mocha"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "keywords": [
+    "seneca",
+    "promise",
+    "async",
+    "await"
+  ],
+  "author": "Tyler Waters <tyler.waters@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/tswaters/seneca-promise.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "rimraf": "^2.6.1",
+    "seneca": "^3.4.1"
+  },
+  "nyc": {
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
+  }
+}
