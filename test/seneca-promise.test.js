@@ -1,7 +1,6 @@
 
 'use strict'
 
-const util = require('util')
 const assert = require('assert')
 const Seneca = require('seneca')
 const SenecaPromise = require('..')
@@ -9,12 +8,10 @@ const SenecaPromise = require('..')
 describe('seneca-promise', () => {
 
   let si = null
-  let act = null
 
   beforeEach(done => {
     si = Seneca({log: 'silent'})
     si.use(SenecaPromise)
-    act = util.promisify(si.act).bind(si)
     si.ready(() => {
 
       si.addAsync('role:auth,cmd:rejects', async msg => {
@@ -63,8 +60,8 @@ describe('seneca-promise', () => {
         return msg
       })
 
-      si.addAsync('cmd:resolve-additional', {additional: true}, async (msg) => {
-        return await act('cmd:resolve', msg)
+      si.addAsync('cmd:resolve-additional', {additional: true}, async function (msg) {
+        return await this.actAsync('cmd:resolve', msg)
       })
 
       si.addAsync('cmd:reject', async () => {
