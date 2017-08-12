@@ -4,6 +4,7 @@
   "description": "Utilities for seneca re: promises, async/await",
   "main": "seneca-promise.js",
   "scripts": {
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rimraf coverage .nyc_output",
     "lint": "eslint .",
     "test": "npm run clean && nyc mocha"
@@ -24,6 +25,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^4.4.1",
     "mocha": "^3.5.0",
     "nyc": "^11.1.0",
