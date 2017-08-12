@@ -1,7 +1,9 @@
-# Seneca Promise
 
 [![npm version][npm-badge]][npm-url]
 [![Dependency Status][david-badge]][david-url]
+[![Build Status][travis-badge]][travis-url]
+
+# Seneca Promise
 
 Utilities for seneca re: promises, async/await
 
@@ -44,3 +46,5 @@ seneca.ready(() => {
 [npm-url]: https://badge.fury.io/js/hashifier
 [david-badge]: https://david-dm.org/tswaters/hashifier.svg
 [david-url]: https://david-dm.org/tswaters/hashifier
+[travis-badge]: https://travis-ci.org/tswaters/seneca-promise.svg?branch=master
+[travis-url]: https://travis-ci.org/tswaters/seneca-promise
