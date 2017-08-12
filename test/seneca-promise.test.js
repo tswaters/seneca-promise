@@ -85,7 +85,7 @@ describe('seneca-promise', () => {
     si.actAsync('role:auth,cmd:rejects')
       .then(() => {throw new Error('should not hit')})
       .catch(err => {
-        assert.equal(err.orig.message, 'rejected!')
+        assert.equal(err.details.message, 'rejected!')
       })
   })
 
@@ -93,7 +93,7 @@ describe('seneca-promise', () => {
     si.actAsync('cmd:prior-error', {ok: true})
       .then(() => {throw new Error('should not hit')})
       .catch(err => {
-        assert.equal(err.orig.message, 'rejected!')
+        assert.equal(err.details.message, 'rejected!')
       })
   )
 
@@ -123,7 +123,7 @@ describe('seneca-promise', () => {
     si.actAsync('cmd:reject')
       .then(() => {throw new Error('should not hit')})
       .catch(err => {
-        assert.equal(err.orig.message, 'rejected!')
+        assert.equal(err.details.message, 'rejected!')
       })
   )
 
