@@ -13,6 +13,16 @@ function SenecaPromise () {
     })
   })
 
+  this.decorate('wrapAsync', function (...args) {
+    const action = args[args.length - 1]
+    const pattern = args.slice(0, -1)
+    this.wrap(...pattern, function (msg, cb) {
+      action.call(this, msg)
+        .then(result => cb(null, result))
+        .catch(err => cb(err))
+    })
+  })
+
   this.decorate('priorAsync', function (msg) {
     return new Promise((resolve, reject) =>
       this.prior.call(this, msg, (err, result) =>

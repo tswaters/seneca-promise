@@ -17,6 +17,29 @@ describe('seneca-promise', () => {
     act = util.promisify(si.act).bind(si)
     si.ready(() => {
 
+      si.addAsync('role:auth,cmd:rejects', async msg => {
+        if (msg.user !== 'user') {
+          throw new Error('unauthorized')
+        }
+        else {
+          throw new Error('rejected!')
+        }
+      })
+
+      si.addAsync('role:auth,cmd:resolves', async msg => {
+        if (msg.user !== 'user') {
+          throw new Error('unauthorized')
+        }
+        else {
+          return msg
+        }
+      })
+
+      si.wrapAsync('role:auth,cmd:*', async function (msg) {
+        msg.user = 'user'
+        return await this.priorAsync(msg)
+      })
+
       si.addAsync('cmd:prior', async (msg) => {
         msg.second = true
         return msg
@@ -53,6 +76,21 @@ describe('seneca-promise', () => {
   })
 
   afterEach(done => si.close(done))
+
+  it('should wrap actions and resolve properly', () =>
+    si.actAsync('role:auth,cmd:resolves')
+      .then(msg => {
+        assert.equal(msg.user, 'user')
+      })
+  )
+
+  it('should wrap actions and reject properly', () => {
+    si.actAsync('role:auth,cmd:rejects')
+      .then(() => {throw new Error('should not hit')})
+      .catch(err => {
+        assert.equal(err.orig.message, 'rejected!')
+      })
+  })
 
   it('should reject prior actions properly', () =>
     si.actAsync('cmd:prior-error', {ok: true})
