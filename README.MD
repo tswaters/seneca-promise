@@ -75,10 +75,10 @@ seneca.ready(() => {
 [Logo]: http://senecajs.org/files/assets/seneca-logo.png
 [senecajs.org]: http://senecajs.org/
 [github issue]: https://github.com/tswaters/seneca-promise/issues
-[npm-badge]: https://badge.fury.io/js/hashifier.svg
-[npm-url]: https://badge.fury.io/js/hashifier
-[david-badge]: https://david-dm.org/tswaters/hashifier.svg
-[david-url]: https://david-dm.org/tswaters/hashifier
+[npm-badge]: https://badge.fury.io/js/seneca-promise.svg
+[npm-url]: https://badge.fury.io/js/seneca-promise
+[david-badge]: https://david-dm.org/tswaters/seneca-promise.svg
+[david-url]: https://david-dm.org/tswaters/seneca-promise
 [travis-badge]: https://travis-ci.org/tswaters/seneca-promise.svg?branch=master
 [travis-url]: https://travis-ci.org/tswaters/seneca-promise
 [coveralls-badge]: https://coveralls.io/repos/github/tswaters/seneca-promise/badge.svg?branch=master
