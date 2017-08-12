@@ -2,6 +2,7 @@
 [![npm version][npm-badge]][npm-url]
 [![Dependency Status][david-badge]][david-url]
 [![Build Status][travis-badge]][travis-url]
+[![Coverage Status][coveralls-badge]][coveralls-url]
 
 # Seneca Promise
 
@@ -48,3 +49,5 @@ seneca.ready(() => {
 [david-url]: https://david-dm.org/tswaters/hashifier
 [travis-badge]: https://travis-ci.org/tswaters/seneca-promise.svg?branch=master
 [travis-url]: https://travis-ci.org/tswaters/seneca-promise
+[coveralls-badge]: https://coveralls.io/repos/github/tswaters/seneca-promise/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/tswaters/seneca-promise?branch=master
