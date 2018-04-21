@@ -10,7 +10,7 @@
     "test": "npm run clean && nyc mocha"
   },
   "engines": {
-    "node": "8"
+    "node": ">=8"
   },
   "keywords": [
     "seneca",
