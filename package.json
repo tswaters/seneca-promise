@@ -19,6 +19,12 @@
     "await"
   ],
   "author": "Tyler Waters <tyler.waters@gmail.com>",
+  "contributors": [
+    {
+      "name": "TheAppleFreak",
+      "url": "https://github.com/TheAppleFreak"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "http://github.com/tswaters/seneca-promise.git"
