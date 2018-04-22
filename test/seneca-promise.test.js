@@ -81,13 +81,13 @@ describe('seneca-promise', () => {
       })
   )
 
-  it('should wrap actions and reject properly', () => {
+  it('should wrap actions and reject properly', () =>
     si.actAsync('role:auth,cmd:rejects')
       .then(() => {throw new Error('should not hit')})
       .catch(err => {
         assert.equal(err.details.message, 'rejected!')
       })
-  })
+  )
 
   it('should reject prior actions properly', () =>
     si.actAsync('cmd:prior-error', {ok: true})
