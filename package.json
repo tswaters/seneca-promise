@@ -31,12 +31,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "^2.13.1",
-    "eslint": "^4.4.1",
-    "mocha": "^3.5.0",
-    "nyc": "^11.1.0",
-    "rimraf": "^2.6.1",
-    "seneca": "^3.4.1"
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
+    "rimraf": "^2.6.2",
+    "seneca": "^3.4.3"
   },
   "nyc": {
     "reporter": [
