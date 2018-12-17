@@ -58,6 +58,39 @@ seneca.ready(() => {
 
 ```
 
+## Usage with TypeScript
+
+```sh
+npm i -D typescript @types/seneca
+```
+
+By requiring `seneca-promise` the seneca `Instance` type will be modified to include `addAsync`, `actAsync`, `wrapAsync` and `priorAsync`. You must still `use` this plugin for the functions to show up properly on the seneca instance!
+
+```ts
+import Seneca = require('seneca')
+import SenecaPromise = require('seneca-promise')
+const seneca = Seneca()
+seneca.use(SenecaPromise)
+seneca.addAsync // huzzah!
+```
+
+Each method takes the following generic type parameters:
+
+* Action - first parameter (jsonic) provided to the functions
+* Params - second parameter (object) provided to the functions
+* Response - type of the response (includes both action & params)
+
+The action and params are somewhat exchangable the same way the following are equivelent in seneca using js:
+
+```js
+seneca.add('role:user,cmd:test', () => {})
+seneca.add('role:user', {cmd: 'test'}, () => {})
+seneca.add({role:user}, {cmd: 'test'}, () => {})
+```
+
+For a full example, refer to the [test file](./test/typescript.ts)
+
+
 ## API
 
 * addAsync
