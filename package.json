@@ -3,11 +3,12 @@
   "version": "1.1.2",
   "description": "Utilities for seneca re: promises, async/await",
   "main": "seneca-promise.js",
+  "typings": "seneca-promise.d.ts",
   "scripts": {
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rimraf coverage .nyc_output",
     "lint": "eslint .",
-    "test": "npm run clean && nyc mocha"
+    "test": "npm run clean && nyc mocha && tsc"
   },
   "engines": {
     "node": ">=8"
@@ -31,12 +32,15 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^10.12.15",
+    "@types/seneca": "^2.1.9",
     "coveralls": "^3.0.2",
     "eslint": "^5.10.0",
     "mocha": "^5.2.0",
     "nyc": "^11.9.0",
     "rimraf": "^2.6.2",
-    "seneca": "^3.7.0"
+    "seneca": "^3.7.0",
+    "typescript": "^3.2.2"
   },
   "nyc": {
     "reporter": [
