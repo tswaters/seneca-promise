@@ -39,17 +39,17 @@ seneca.ready(() => {
   })
 
   // you can await other actions!
-  seneca.addAsync('cmd:test', async (msg) => {
+  seneca.addAsync('cmd:test', async function (msg) {
     await this.actAsync('cmd:error', msg)
   })
 
   // and call into prior actions with `priorAsync`!
-  seneca.addAsync('cmd:test', async msg => {
+  seneca.addAsync('cmd:test', async function (msg) {
     return await result = this.priorAsync(msg)
   })
 
   // and you can even wrap methods!
-  seneca.wrapAsync('cmd:*', async msg => {
+  seneca.wrapAsync('cmd:*', async function (msg) {
     console.log('Received cmd', msg.pattern)
     return await this.priorAsync(msg)
   })
