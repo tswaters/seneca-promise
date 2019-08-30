@@ -32,15 +32,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^10.12.15",
+    "@types/node": "^12.7.3",
     "@types/seneca": "^2.1.9",
-    "coveralls": "^3.0.2",
-    "eslint": "^5.10.0",
-    "mocha": "^5.2.0",
-    "nyc": "^11.9.0",
-    "rimraf": "^2.6.2",
-    "seneca": "^3.7.0",
-    "typescript": "^3.2.2"
+    "coveralls": "^3.0.6",
+    "eslint": "^6.3.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "rimraf": "^3.0.0",
+    "seneca": "^3.13.3",
+    "typescript": "^3.6.2"
   },
   "nyc": {
     "reporter": [
